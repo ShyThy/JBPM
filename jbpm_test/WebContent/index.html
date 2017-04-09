@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet 教程</title>
+</head>
+<body>
+	<form action="HelloForm" method="POST">
+		网址名：<input type="text" name="name">
+		</br>
+		网址：<input type="text" name="url">
+		</br>
+		<input type="submit" value="提交">
+	</form>
+	</br></br>
+	
+	<form action="CheckBox" method="POST" target="_blank"> 
+		<input type="checkbox" name="runoob" checked="checked"> 菜鸟教程
+		<input type="checkbox" name="google" > google
+		<input type="checkbox" name="apple" checked="checked"> apple
+		<input type="submit" value="提交">
+	</form>
+
+	<form action="test/ReadParams" method="POST" target="_blank"> 
+		<input type="checkbox" name="runoob" checked="checked"> 菜鸟教程
+		<input type="checkbox" name="google" > google
+		<input type="checkbox" name="apple" checked="checked"> apple
+		网址名：<input type="text" name="name">
+		<input type="submit" value="提交">
+	</form>
+	
+	<form action="test/HelloFormCookie" method="POST">
+			网址名：<input type="text" name="name">
+		</br>
+		网址：<input type="text" name="url">
+		</br>
+		<input type="submit" value="提交">
+	</form>
+	
+	<form action="test/UploadFile" method="POST" enctype="multipart/form-data">
+		选择一个文件 <input type="file" name="uploadFile">
+		<input type="submit" value="上传">
+	</form>
+</body>
+</html>

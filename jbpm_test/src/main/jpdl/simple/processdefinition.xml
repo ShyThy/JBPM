@@ -4,18 +4,20 @@
   xmlns="urn:jbpm.org:jpdl-3.2"
   name="simple">
    <start-state name="start">
-      <transition name="to_state" to="first">
-         <action name="action" class="com.sample.action.MessageActionHandler">
-            <message>Going to the first state!</message>
-         </action>
-      </transition>
-   </start-state>
-   <state name="first">
-      <transition name="to_end" to="end">
-         <action name="action" class="com.sample.action.MessageActionHandler">
-            <message>About to finish!</message>
-         </action>
-      </transition>
-   </state>
+		<transition to="task-node1"></transition>
+	</start-state>
+   <task-node name="task-node1">
+		<event type="node-enter">
+			<script>
+				print(&quot;当前Token对象的ID为：&quot;+token.getId());
+contextInstance = executionContext.getContextInstance();
+print(&quot;流程变量param的值为：&quot;+contextInstance.getVariable(&quot;param&quot;));
+print(&quot;直接获取变量的值为：&quot;+param);
+contextInstance.setVariable(&quot;newParam&quot;,&quot;通过BeanShell添加的流程变量&quot;);
+print(&quot;当前节点名称为：&quot;+node.getName());
+			</script>
+		</event>
+		<transition to="end"></transition>
+	</task-node>
    <end-state name="end"></end-state>
 </process-definition>

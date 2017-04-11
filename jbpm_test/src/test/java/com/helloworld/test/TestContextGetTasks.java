@@ -14,6 +14,7 @@ public class TestContextGetTasks {
 	
 	public static void main(String[] args) {
 		JbpmContext jbpmContext = JbpmConfiguration.getInstance().createJbpmContext(JbpmContext.DEFAULT_JBPM_CONTEXT_NAME);
+		// actorId 为任务参与者名称
 		List list = jbpmContext.getTaskList("actorId");
 		jbpmContext.close();
 	}

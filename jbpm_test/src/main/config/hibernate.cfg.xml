@@ -8,13 +8,13 @@
   <session-factory>
 
     <!-- hibernate dialect -->
-    <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
     <!-- JDBC connection properties (begin) -->
-    <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
-    <property name="hibernate.connection.url">jdbc:hsqldb:mem:jbpm</property>
-    <property name="hibernate.connection.username">sa</property>
-    <property name="hibernate.connection.password"></property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.2.103:3306/jbpm</property>
+    <property name="hibernate.connection.username">enju</property>
+    <property name="hibernate.connection.password">9999</property>
     <!-- JDBC connection properties (end) -->
     
     <property name="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>

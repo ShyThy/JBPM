@@ -9,6 +9,16 @@
 
 
 	<state name="state1">
+		<event type="node-enter">
+			<script>
+				print(&quot;当前Token对象的ID为：&quot;+token.getId());
+contextInstance = executionContext.getContextInstance();
+print(&quot;流程变量param的值为：&quot;+contextInstance.getVariable(&quot;param&quot;));
+print(&quot;直接获取变量的值为：&quot;+param);
+contextInstance.setVariable(&quot;newParam&quot;,&quot;通过BeanShell添加的流程变量&quot;);
+print(&quot;当前节点名称为：&quot;+node.getName());
+			</script>
+		</event>
 		<transition to="node1"></transition>
 	</state>
 

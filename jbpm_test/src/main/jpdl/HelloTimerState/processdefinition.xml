@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2"  name="HelloTimerState">
+
+
+	<start-state name="start-state1">
+		<transition to="state1"></transition>
+	</start-state>
+
+
+	<state name="state1">
+		<timer name="MyStateTime" transition="to node2" duedate="1 minutes">
+			<action></action>
+		</timer>
+		<transition to="node1"></transition>
+		<transition to="node2" name="to node2"></transition>
+		<transition to="node3" name="to node3"></transition>
+	</state>
+
+	<node name="node1">
+		<event type="node-enter">
+			<script>
+				print(&quot;到达 node1 ！！！！！！！！！！！！！&quot;);
+			</script>
+		</event>
+	</node>
+
+	<node name="node2">
+		<event type="node-enter">
+			<script>
+				print(&quot;到达 node2 ！！！！！！！！！！！！！&quot;);
+			</script>
+		</event>
+		<transition to="end-state1"></transition>
+	</node>
+
+	<node name="node3">
+		<event type="node-enter">
+			<script>
+				print(&quot;到达 node3 ！！！！！！！！！！！！！&quot;);
+			</script>
+		</event>
+	</node>
+
+
+	<end-state name="end-state1"></end-state>
+
+
+</process-definition>

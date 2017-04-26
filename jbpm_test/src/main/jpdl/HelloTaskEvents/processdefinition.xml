@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2"  name="HelloTaskEvents">
+
+
+	<start-state name="start-state1">
+		<transition to="MyTask"></transition>
+	</start-state>
+
+
+	<task-node name="MyTask">
+		<description>
+			Description my task :sssss;
+		</description>
+		<task name="EventTask">
+			<description>
+				description: event task lalalallala;
+			</description>
+			<assignment actor-id="gaojie"></assignment>
+		</task>
+		<event type="task-create">
+			<script name="createTaskScript">
+				print(&quot;Task create event 00000000000000000&quot;);
+			</script>
+		</event>
+		<event type="task-start">
+			<script name="startTaskScript">
+				print(&quot;Task start  event 11111111111111&quot;);
+			</script>
+		</event>
+		<event type="task-assign">
+			<script name="assignTaskScript">
+				print(&quot;Task assign event 222222222&quot;);
+			</script>
+		</event>
+		<event type="task-end">
+			<script name="endTaskScript">
+				print(&quot;Task end event 333333&quot;);
+			</script>
+		</event>
+		<transition to="end-state1"></transition>
+	</task-node>
+
+
+	<end-state name="end-state1"></end-state>
+
+
+</process-definition>

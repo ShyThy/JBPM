@@ -19,7 +19,11 @@ public class TestDeploy {
 	public static void main(String[] args) {
 //		TestDeploy.deployByName("simple/processdefinition.xml");
 //		TestDeploy.deployByName("HelloAction/processdefinition.xml");
-		TestDeploy.deployByName("HelloTask/processdefinition.xml");
+//		TestDeploy.deployByName("HelloTask/processdefinition.xml");
+//		TestDeploy.deployByName("HelloTaskEvents/processdefinition.xml");
+//		TestDeploy.deployByName("HelloEmail/processdefinition.xml");
+//		TestDeploy.deployByName("HelloTimerState/processdefinition.xml");
+		TestDeploy.deployByName("HelloTimerTask/processdefinition.xml");
 	}
 	
 	private static void deployByName(String name){
@@ -28,7 +32,7 @@ public class TestDeploy {
 		jbpmContext.deployProcessDefinition(processDefinition);
 		jbpmContext.close();
 	}
-	private static void deployHelloworld(){
+	private static void deployByZip(){
 		JbpmContext jbpmContext = JbpmConfiguration.getInstance().createJbpmContext();
 		try {
 			InputStream is = new FileInputStream(new File("D:/Space/helloworld.zip"));

@@ -5,5 +5,7 @@
     Those configurations can be overwritten by putting this file called 
     jbpm.cfg.xml on the root of the classpath and put in the customized values.
   -->
-
+	<string name="jbpm.mail.smtp.host" value="smtp.163.com" />
+  <bean   name="jbpm.mail.address.resolver" class="com.test.TestEmailResolve" singleton="true" />
+  <string name="jbpm.mail.from.address" value="tianhangyu6666@163.com" />
 </jbpm-configuration>
